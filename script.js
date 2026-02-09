@@ -37,15 +37,19 @@ function calculateInterest(isIsa, balance, interestRate, taxStatus) {
     }
 }
 
+calculateInterest(false, 20000, 0.06, "basic");
 
 document.addEventListener("submit", function (event) {
 
-    let isIsa = Boolean(document.querySelector("input[name=isIsa]").value);
+    
     let balance = Number(document.querySelector("input[name=balance]").value);
     let interestRate = Number(document.querySelector("input[name=rate]").value) / 100;
     let taxStatus = document.querySelector("select[name=taxStatus]").value;
 
-    console.log(calculateInterest(isIsa, balance, interestRate, taxStatus));
+    document.getElementById("isaResult").innerHTML = 
+    "With an ISA you keep: £" + calculateInterest(true, balance, interestRate, taxStatus)
+    document.getElementById("nonIsaResult").innerHTML = 
+    "With a non ISA you keep: £" + calculateInterest(false, balance, interestRate, taxStatus)
 
     event.preventDefault();
 })

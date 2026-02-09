@@ -14,11 +14,11 @@
     <form action="">
         <div>
             <label for="balance">Balance</label>
-            <input type="number" name="balance" value="1000">
+            <input type="number" name="balance" value="20000">
         </div>
         <div>
             <label for="rate">Rate</label>
-            <input type="number" name="rate" value="3" step=".01">
+            <input type="number" name="rate" value="6" step=".01">
         </div>
         <div>
             <label for="taxStatus">Tax Status</label>
@@ -29,18 +29,14 @@
             </select>
         </div>
 
-        <div>
-            <input type="radio" name="isIsa" value="true">
-            <label for="isIsa">ISA</label>
-        </div>
-        <div>
-            <input type="radio" name="isIsa" value="false" checked>
-            <label for="isIsa">Non ISA</label>
-
-        </div>
-
         <button>Calculate</button>
     </form>
+
+    <h3 id="isaResult"></h3>
+
+    <h3 id="nonIsaResult"></h3>
+
+
 </body>
 
 </html>
