@@ -13,6 +13,17 @@
     <h2>ISA vs non ISA</h2>
     <form action="">
         <div>
+            <h3>ISA Product</h3>
+            <label for="isaBalance">Balance</label>
+            <input type="number" name="isaBalance" value="20000">
+        </div>
+        <div>
+            <label for="isaRate">Rate</label>
+            <input type="number" name="isaRate" value="6" step=".01">
+        </div>
+
+        <div>
+            <h3>Non ISA Product</h3>
             <label for="balance">Balance</label>
             <input type="number" name="balance" value="20000">
         </div>
@@ -20,6 +31,7 @@
             <label for="rate">Rate</label>
             <input type="number" name="rate" value="6" step=".01">
         </div>
+        <br>
         <div>
             <label for="taxStatus">Tax Status</label>
             <select name="taxStatus" id="taxStatus">
@@ -28,14 +40,12 @@
                 <option value="additional">Additonal Rate</option>
             </select>
         </div>
-
         <button>Calculate</button>
     </form>
 
     <h3 id="isaResult"></h3>
 
     <h3 id="nonIsaResult"></h3>
-
 
 </body>
 

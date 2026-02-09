@@ -1,11 +1,13 @@
 
 window.addEventListener("load", function () {
 
+let taxOwed;
 
 function calculateInterest(isIsa, balance, interestRate, taxStatus) {
 
     let allowance;
     let taxRate;
+    taxOwed = 0;
 
     // Establish tax status rules
     if (taxStatus === "basic") {
@@ -33,23 +35,29 @@ function calculateInterest(isIsa, balance, interestRate, taxStatus) {
     if (!isIsa && balance * interestRate > allowance) {
         let interest = balance * interestRate;
         let taxableInterest = interest - allowance;
-        return interest - (taxableInterest * taxRate);
+        taxOwed = taxableInterest * taxRate;
+        return interest - taxOwed;
     }
 }
 
-calculateInterest(false, 20000, 0.06, "basic");
-
 document.addEventListener("submit", function (event) {
 
+    let isaBalance = document.querySelector("input[name=isaBalance]").value;
+    let isaInterestRate = document.querySelector("input[name=isaRate]").value / 100;
     
-    let balance = Number(document.querySelector("input[name=balance]").value);
-    let interestRate = Number(document.querySelector("input[name=rate]").value) / 100;
+    let balance = document.querySelector("input[name=balance]").value;
+    let interestRate = document.querySelector("input[name=rate]").value / 100;
+
     let taxStatus = document.querySelector("select[name=taxStatus]").value;
 
+    let isaResult = calculateInterest(true, isaBalance, isaInterestRate, taxStatus);
     document.getElementById("isaResult").innerHTML = 
-    "With an ISA you keep: £" + calculateInterest(true, balance, interestRate, taxStatus)
+    `With £${isaBalance} in an ISA at ${Math.round(isaInterestRate * 10000) / 100}%, you keep £${isaResult.toFixed(2)} and owe £${taxOwed}`;
+    
+    let nonIsaResult = calculateInterest(false, balance, interestRate, taxStatus);
     document.getElementById("nonIsaResult").innerHTML = 
-    "With a non ISA you keep: £" + calculateInterest(false, balance, interestRate, taxStatus)
+    `With £${balance} in a non ISA at ${Math.round(interestRate * 10000) / 100}%, you keep £${nonIsaResult.toFixed(2)} and owe £${taxOwed.toFixed(2)}`;
+
 
     event.preventDefault();
 })
