@@ -1,11 +1,11 @@
 
 body {
     background-color: rgb(200, 222, 235);
-    background-repeat: repeat;
-    background-size: 10%;
     color: rgb(7, 44, 108);
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: larger;
+    font-size: 2em;
+    padding: 10px;
+    
 }
 
 label {
@@ -14,8 +14,15 @@ label {
 
 input, button, select {
     font-size: large;
+    border: 2px rgba(7, 44, 108) solid;
     border-radius: 5px;
 }
+
+input:hover, button:hover, select:hover {
+    box-shadow: 0 0 3px rgb(15, 91, 220);
+}
+
+
 
 p {
     margin-left: 20px; 
