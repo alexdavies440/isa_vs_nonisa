@@ -40,7 +40,12 @@ function calculateInterest(isIsa, balance, interestRate, taxStatus) {
 
 document.addEventListener("submit", function (event) {
 
-    console.log("submitted");
+    let isIsa = Boolean(document.querySelector("input[name=isIsa]").value);
+    let balance = Number(document.querySelector("input[name=balance]").value);
+    let interestRate = Number(document.querySelector("input[name=rate]").value) / 100;
+    let taxStatus = document.querySelector("select[name=taxStatus]").value;
+
+    console.log(calculateInterest(isIsa, balance, interestRate, taxStatus));
 
     event.preventDefault();
 })
