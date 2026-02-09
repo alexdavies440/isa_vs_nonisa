@@ -1,4 +1,7 @@
 
+window.addEventListener("load", function () {
+
+
 function calculateInterest(isIsa, balance, interestRate, taxStatus) {
 
     let allowance;
@@ -34,5 +37,12 @@ function calculateInterest(isIsa, balance, interestRate, taxStatus) {
     }
 }
 
-calculateInterest(false, 20000, 0.06, "basic")
 
+document.addEventListener("submit", function (event) {
+
+    console.log("submitted");
+
+    event.preventDefault();
+})
+
+})

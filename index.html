@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ISA vs non ISA</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js"></script>
+</head>
+
+<body>
+    <h2>ISA vs non ISA</h2>
+    <form action="">
+        <div>
+            <label for="balance">Balance</label>
+            <input type="number" name="balance" value="1000">
+        </div>
+        <div>
+            <label for="rate">Rate</label>
+            <input type="number" name="rate" value="3" step=".01">
+        </div>
+        <div>
+            <label for="taxRate">Tax Rate</label>
+            <select name="taxRate" id="taxRate">
+                <option value="basic">Basic Rate</option>
+                <option value="higher">Higher Rate</option>
+                <option value="additional">Additonal Rate</option>
+            </select>
+        </div>
+
+        <div>
+            <input type="radio" name="isIsa" value="true">
+            <label for="isIsa">ISA</label>
+        </div>
+        <div>
+            <input type="radio" name="isIsa" value="false">
+            <label for="isIsa">Non ISA</label>
+
+        </div>
+
+        <button>Calculate</button>
+    </form>
+</body>
+
+</html>

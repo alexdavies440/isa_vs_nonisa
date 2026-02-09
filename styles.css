@@ -1,0 +1,33 @@
+
+body {
+    background-color: rgb(200, 222, 235);
+    background-repeat: repeat;
+    background-size: 10%;
+    color: rgb(7, 44, 108);
+    font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: larger;
+}
+
+label {
+    font-weight: bold;
+}
+
+input, button, select {
+    font-size: large;
+    border-radius: 5px;
+}
+
+p {
+    margin-left: 20px; 
+    margin: 50px;
+}
+
+#finalBalance {
+    font-weight: bold;
+}
+
+div {
+    /* width: 30%; */
+    border-radius: 5px;
+}
+
